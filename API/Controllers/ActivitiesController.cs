@@ -34,8 +34,8 @@ namespace API.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateActivity (Activity activity)
         {
-            await Mediator.Send(new Create.Command{Activity = activity});
-            return Ok();
+            await Mediator.Send(new Create.Command{Activity = activity}); //SEnd an object to Mediator in create handler
+            return Ok(); //returns Http response
         }
 
         [HttpPut("{id}")]

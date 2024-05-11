@@ -24,7 +24,7 @@ namespace Application.Activities
 
             public async Task Handle(Command request, CancellationToken cancellationToken)
             {
-                _context.Activities.Add(request.Activity);
+                _context.Activities.Add(request.Activity); //Process logic and then send an object back to API Controller
                 await _context.SaveChangesAsync();
                 
             }
